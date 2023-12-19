@@ -1,0 +1,10 @@
+top=top
+
+A (SW3, SW2, SW1, SW0)
+B (SW7, SW6, SW5, SW4)
+S (LD3, LD2, LD1, LD0)
+shamt (SW10, SW9, SW8)
+O LD4
+C LD5
+Z LD6
+

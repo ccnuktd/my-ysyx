@@ -10,4 +10,5 @@ void nvboard_bind_all_pins(Vtop* top) {
 	nvboard_bind_pin( &top->seg3, BIND_RATE_SCR, BIND_DIR_OUT, 8, SEG3A, SEG3B, SEG3C, SEG3D, SEG3E, SEG3F, SEG3G, DEC3P);
 	nvboard_bind_pin( &top->seg4, BIND_RATE_SCR, BIND_DIR_OUT, 8, SEG4A, SEG4B, SEG4C, SEG4D, SEG4E, SEG4F, SEG4G, DEC4P);
 	nvboard_bind_pin( &top->seg5, BIND_RATE_SCR, BIND_DIR_OUT, 8, SEG5A, SEG5B, SEG5C, SEG5D, SEG5E, SEG5F, SEG5G, DEC5P);
+	nvboard_bind_pin( &top->rst, BIND_RATE_SCR, BIND_DIR_IN , 1, BTNC);
 }

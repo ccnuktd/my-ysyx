@@ -39,8 +39,14 @@ VL_INLINE_OPT void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf) 
     __Vtableidx8 = 0;
     CData/*1:0*/ __Vdly__top__DOT__inst__DOT__ps2_clk_sync;
     __Vdly__top__DOT__inst__DOT__ps2_clk_sync = 0;
+    CData/*3:0*/ __Vdly__top__DOT__inst__DOT__count;
+    __Vdly__top__DOT__inst__DOT__count = 0;
+    CData/*2:0*/ __Vdly__top__DOT__inst__DOT__w_point;
+    __Vdly__top__DOT__inst__DOT__w_point = 0;
     CData/*2:0*/ __Vdly__top__DOT__inst__DOT__r_point;
     __Vdly__top__DOT__inst__DOT__r_point = 0;
+    CData/*0:0*/ __Vdly__top__DOT__overflow;
+    __Vdly__top__DOT__overflow = 0;
     CData/*0:0*/ __Vdly__top__DOT__device_ready;
     __Vdly__top__DOT__device_ready = 0;
     CData/*2:0*/ __Vdlyvdim0__top__DOT__inst__DOT__fifo__v0;
@@ -49,25 +55,29 @@ VL_INLINE_OPT void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf) 
     __Vdlyvval__top__DOT__inst__DOT__fifo__v0 = 0;
     CData/*0:0*/ __Vdlyvset__top__DOT__inst__DOT__fifo__v0;
     __Vdlyvset__top__DOT__inst__DOT__fifo__v0 = 0;
-    CData/*2:0*/ __Vdly__top__DOT__inst__DOT__w_point;
-    __Vdly__top__DOT__inst__DOT__w_point = 0;
-    CData/*3:0*/ __Vdly__top__DOT__inst__DOT__count;
-    __Vdly__top__DOT__inst__DOT__count = 0;
     // Body
     __Vdly__top__DOT__inst__DOT__ps2_clk_sync = vlSelf->top__DOT__inst__DOT__ps2_clk_sync;
-    __Vdly__top__DOT__inst__DOT__count = vlSelf->top__DOT__inst__DOT__count;
-    __Vdly__top__DOT__inst__DOT__w_point = vlSelf->top__DOT__inst__DOT__w_point;
     __Vdly__top__DOT__device_ready = vlSelf->top__DOT__device_ready;
+    __Vdly__top__DOT__overflow = vlSelf->top__DOT__overflow;
+    __Vdly__top__DOT__inst__DOT__w_point = vlSelf->top__DOT__inst__DOT__w_point;
+    __Vdly__top__DOT__inst__DOT__count = vlSelf->top__DOT__inst__DOT__count;
     __Vdly__top__DOT__inst__DOT__r_point = vlSelf->top__DOT__inst__DOT__r_point;
     __Vdlyvset__top__DOT__inst__DOT__fifo__v0 = 0U;
     __Vdly__top__DOT__inst__DOT__ps2_clk_sync = ((2U 
                                                   & ((IData)(vlSelf->top__DOT__inst__DOT__ps2_clk_sync) 
                                                      << 1U)) 
                                                  | (IData)(vlSelf->ps2_clk));
-    if ((1U & (~ (IData)(vlSelf->rst_n)))) {
+    if (vlSelf->rst) {
         __Vdly__top__DOT__inst__DOT__ps2_clk_sync = 0U;
-    }
-    if (vlSelf->rst_n) {
+        vlSelf->top__DOT__count = 0U;
+        vlSelf->top__DOT__state = 1U;
+        vlSelf->top__DOT__r_data = 0U;
+        __Vdly__top__DOT__inst__DOT__count = 0U;
+        __Vdly__top__DOT__inst__DOT__w_point = 0U;
+        __Vdly__top__DOT__inst__DOT__r_point = 0U;
+        __Vdly__top__DOT__overflow = 0U;
+        __Vdly__top__DOT__device_ready = 0U;
+    } else {
         vlSelf->top__DOT__count = (0xffU & ((((~ (IData)(vlSelf->top__DOT__host_valid_n)) 
                                               & ((2U 
                                                   == (IData)(vlSelf->top__DOT__next_state)) 
@@ -109,7 +119,7 @@ VL_INLINE_OPT void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf) 
                     __Vdly__top__DOT__device_ready = 1U;
                     __Vdly__top__DOT__inst__DOT__w_point 
                         = (7U & ((IData)(1U) + (IData)(vlSelf->top__DOT__inst__DOT__w_point)));
-                    vlSelf->top__DOT__overflow = ((IData)(vlSelf->top__DOT__overflow) 
+                    __Vdly__top__DOT__overflow = ((IData)(vlSelf->top__DOT__overflow) 
                                                   | ((7U 
                                                       & ((IData)(1U) 
                                                          + (IData)(vlSelf->top__DOT__inst__DOT__w_point))) 
@@ -130,19 +140,11 @@ VL_INLINE_OPT void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf) 
                     = (0xfU & ((IData)(1U) + (IData)(vlSelf->top__DOT__inst__DOT__count)));
             }
         }
-    } else {
-        vlSelf->top__DOT__count = 0U;
-        vlSelf->top__DOT__state = 1U;
-        vlSelf->top__DOT__r_data = 0U;
-        __Vdly__top__DOT__inst__DOT__count = 0U;
-        __Vdly__top__DOT__inst__DOT__w_point = 0U;
-        __Vdly__top__DOT__inst__DOT__r_point = 0U;
-        vlSelf->top__DOT__overflow = 0U;
-        __Vdly__top__DOT__device_ready = 0U;
     }
-    vlSelf->top__DOT__inst__DOT__ps2_clk_sync = __Vdly__top__DOT__inst__DOT__ps2_clk_sync;
-    vlSelf->top__DOT__inst__DOT__w_point = __Vdly__top__DOT__inst__DOT__w_point;
     vlSelf->top__DOT__inst__DOT__count = __Vdly__top__DOT__inst__DOT__count;
+    vlSelf->top__DOT__inst__DOT__w_point = __Vdly__top__DOT__inst__DOT__w_point;
+    vlSelf->top__DOT__overflow = __Vdly__top__DOT__overflow;
+    vlSelf->top__DOT__inst__DOT__ps2_clk_sync = __Vdly__top__DOT__inst__DOT__ps2_clk_sync;
     vlSelf->top__DOT__inst__DOT__r_point = __Vdly__top__DOT__inst__DOT__r_point;
     if (__Vdlyvset__top__DOT__inst__DOT__fifo__v0) {
         vlSelf->top__DOT__inst__DOT__fifo[__Vdlyvdim0__top__DOT__inst__DOT__fifo__v0] 
@@ -169,7 +171,7 @@ VL_INLINE_OPT void Vtop___024root___nba_sequent__TOP__0(Vtop___024root* vlSelf) 
         [__Vtableidx2];
     vlSelf->top__DOT__data = vlSelf->top__DOT__inst__DOT__fifo
         [vlSelf->top__DOT__inst__DOT__r_point];
-    vlSelf->top__DOT__host_valid_n = (1U & ((~ (IData)(vlSelf->rst_n)) 
+    vlSelf->top__DOT__host_valid_n = (1U & ((IData)(vlSelf->rst) 
                                             | (~ (IData)(vlSelf->top__DOT__device_ready))));
     vlSelf->seg4 = (0xffU & (~ (IData)(vlSelf->top__DOT__inst4__DOT__dout)));
     vlSelf->seg5 = (0xffU & (~ (IData)(vlSelf->top__DOT__inst5__DOT__dout)));
@@ -273,8 +275,8 @@ void Vtop___024root___eval_debug_assertions(Vtop___024root* vlSelf) {
     // Body
     if (VL_UNLIKELY((vlSelf->clk & 0xfeU))) {
         Verilated::overWidthError("clk");}
-    if (VL_UNLIKELY((vlSelf->rst_n & 0xfeU))) {
-        Verilated::overWidthError("rst_n");}
+    if (VL_UNLIKELY((vlSelf->rst & 0xfeU))) {
+        Verilated::overWidthError("rst");}
     if (VL_UNLIKELY((vlSelf->ps2_clk & 0xfeU))) {
         Verilated::overWidthError("ps2_clk");}
     if (VL_UNLIKELY((vlSelf->ps2_data & 0xfeU))) {

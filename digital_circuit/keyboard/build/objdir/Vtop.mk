@@ -41,7 +41,6 @@ VM_USER_CFLAGS = \
 	-D_REENTRANT \
 	-I/home/ketted/Desktop/my-ysyx/ysyx-workbench/nvboard/include \
 	-DTOP_NAME="Vtop" \
-	-DNVBOARD \
 
 # User LDLIBS (from -LDFLAGS on Verilator command line)
 VM_USER_LDLIBS = \

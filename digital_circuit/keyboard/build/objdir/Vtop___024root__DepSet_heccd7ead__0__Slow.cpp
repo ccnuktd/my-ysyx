@@ -195,7 +195,7 @@ VL_ATTR_COLD void Vtop___024root___ctor_var_reset(Vtop___024root* vlSelf) {
     VL_DEBUG_IF(VL_DBG_MSGF("+    Vtop___024root___ctor_var_reset\n"); );
     // Body
     vlSelf->clk = 0;
-    vlSelf->rst_n = 0;
+    vlSelf->rst = 0;
     vlSelf->ps2_clk = 0;
     vlSelf->ps2_data = 0;
     vlSelf->seg0 = 0;

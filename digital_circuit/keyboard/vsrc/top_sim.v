@@ -1,5 +1,5 @@
 `timescale 1ps/1ps
-module keyboard_sim(
+module top_sim (
     output reg done
 );
 

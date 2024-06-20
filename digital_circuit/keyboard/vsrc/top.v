@@ -1,6 +1,6 @@
 module top(
     input clk      ,
-    input rst_n    ,
+    input rst      ,
     input ps2_clk  ,
     input ps2_data ,
 
@@ -16,6 +16,9 @@ reg host_valid_n;
 wire overflow, device_ready;
 reg [7:0] data;
 reg [7:0] count; // counter
+wire rst_n;
+
+assign rst_n = ~rst;
 
 ps2_keyboard inst (
     .clk          (clk),

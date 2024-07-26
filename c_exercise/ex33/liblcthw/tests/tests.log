@@ -1,0 +1,18 @@
+DEBUG tests/list_algos_tests.c:88: ----- RUNNING: ./tests/list_algos_tests
+DEBUG tests/list_algos_tests.c:82: 
+----- test_bubble_sort
+DEBUG tests/list_algos_tests.c:83: 
+----- test_merge_sort
+DEBUG tests/list_tests.c:113: ----- RUNNING: ./tests/list_tests
+DEBUG tests/list_tests.c:103: 
+----- test_create
+DEBUG tests/list_tests.c:104: 
+----- test_push_pop
+DEBUG tests/list_tests.c:105: 
+----- test_unshift
+DEBUG tests/list_tests.c:106: 
+----- test_remove
+DEBUG tests/list_tests.c:107: 
+----- test_shift
+DEBUG tests/list_tests.c:108: 
+----- test_destroy

@@ -156,8 +156,11 @@ class HyxdcParser():
     # 检查pins个数是否和位宽相等
     if nowidth == 1:
       # 没有指明位宽则不进行校验，直接将pins数量接入信号
-      for i in range(pins_size - 1, -1, -1):
-        self.signal_bit.append(signal_name + '[' + str(i)  + ']')
+      if pins_size == 1:
+        self.signal_bit.append(signal_name)
+      else:
+        for i in range(pins_size - 1, -1, -1):
+          self.signal_bit.append(signal_name + '[' + str(i)  + ']')
     else:
       if len(self.signal_bit) != len(self.pins):
         print(f"Line {lid+1}: Error: signal bit is not equal to pin count \" {line} \"")

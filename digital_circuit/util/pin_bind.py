@@ -236,7 +236,12 @@ if __name__ == "__main__":
 
       signal = signals[i]
       
-      f.write(f"set_property PACKAGE_PIN {board.queryPin(pin)} [get_ports {{ {signal} }}]\n")
-      f.write(f"set_property IOSTANDARD LVCMOS18 [get_ports {{ {signal} }}]\n")
+      # 需要对于clk_p/n区别对待
+      if board.queryPin(pin) == 'AD12' or  board.queryPin(pin) == 'AD11':
+        f.write(f"set_property PACKAGE_PIN {board.queryPin(pin)} [get_ports {{ {signal} }}]\n")
+        f.write(f"set_property IOSTANDARD DIFF_HSTL_II_18 [get_ports {{ {signal} }}]\n")
+      else:
+        f.write(f"set_property PACKAGE_PIN {board.queryPin(pin)} [get_ports {{ {signal} }}]\n")
+        f.write(f"set_property IOSTANDARD LVCMOS18 [get_ports {{ {signal} }}]\n")
       # print(f"set_property PACKAGE_PIN {board.queryPin(pin)} [get_ports {{ {signal} }}]")
       # print(f"set_property IOSTANDARD LVCMOS18 [get_ports {{ {signal} }}]")
